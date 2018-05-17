@@ -5,9 +5,7 @@ from rest_framework import viewsets
 from blog.serializers import UserSerializer, PostSerializer
 from blog.models import Post
 #Importing Request Module for api request
-import requests
-#to get Json data in a list for django do this
-from django.http import JsonResponse
+
 
 class UserViewSet(viewsets.ModelViewSet):
     """
