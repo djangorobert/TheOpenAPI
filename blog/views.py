@@ -24,19 +24,3 @@ class PostViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
 
-#Home View for the site
-def home(request):
-    capture = requests.get('http://www.theopenapi.info/posts/')
-    c = capture.json()
-
-
-    templates = 'blog/home.html'
-    return render(request, templates, {'title': c[3]['title']})
-
-
-def get_users(request):
-    posts = Post.objects.all().values('title')
-    post_list = list(posts)
-    return JsonResponse(post_list, safe=False)
-
-
