@@ -25,7 +25,7 @@ SECRET_KEY = 'put a secret key here'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['www.theopenapi.info']
+ALLOWED_HOSTS = ['put your domain here']
 
 
 # Application definition
