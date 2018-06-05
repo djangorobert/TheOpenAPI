@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blog',
     'rest_framework',
+    'player',
+    'webpack_loader',
 ]
 
 MIDDLEWARE = [
@@ -53,10 +55,27 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'apiprojects.urls'
 
+
+#Add this for WEBPack , React
+
+WEBPACK_LOADER = {
+    'DEFAULT': {
+            'BUNDLE_DIR_NAME': 'bundles/',
+            'STATS_FILE': os.path.join(BASE_DIR, 'nvm/webpack-stats.prod.json'),
+        }
+}
+
+
+if not DEBUG:
+    WEBPACK_LOADER.update({
+        'BUNDLE_DIR_NAME': 'dist/',
+        'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats-prod.json')
+    })
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, "templates"), ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -126,8 +145,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'nvm/assets'),
+)
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 

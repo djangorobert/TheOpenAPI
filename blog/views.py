@@ -2,12 +2,18 @@ from django.shortcuts import render
 # Create your views here.
 from django.contrib.auth.models import User
 from rest_framework import viewsets
-from blog.serializers import UserSerializer, PostSerializer
+from blog.serializers import UserSerializer, PostSerializer, PointsSerializer, GameSerializer, PlayerSerializer
 from blog.models import Post
+#Lets import our Player APP
 #Importing Request Module for api request
 import requests
 #to get Json data in a list for django do this
 from django.http import JsonResponse
+#Lets Add in some Django Rest Framework imports
+
+
+
+
 
 class UserViewSet(viewsets.ModelViewSet):
     """
@@ -23,6 +29,30 @@ class PostViewSet(viewsets.ModelViewSet):
     """
     queryset = Post.objects.all()
     serializer_class = PostSerializer
+
+
+
+#Lets import our Player APP
+from player.models import Points, Game, Player
+
+
+class PointsViewSet(viewsets.ModelViewSet):
+    queryset = Points.objects.all()
+    serializer_class = PointsSerializer
+
+
+
+
+
+class GameViewSet(viewsets.ModelViewSet):
+    queryset = Game.objects.all()
+    serializer_class = GameSerializer
+
+class PlayerViewSet(viewsets.ModelViewSet):
+    queryset = Player.objects.all()
+    serializer_class = PlayerSerializer
+
+
 
 #Home View for the site
 def home(request):
