@@ -6,6 +6,7 @@ from blog.serializers import UserSerializer, PostSerializer, PointsSerializer, G
 from blog.models import Post
 #Lets import our Player APP
 #Importing Request Module for api request
+<<<<<<< HEAD
 import requests
 #to get Json data in a list for django do this
 from django.http import JsonResponse
@@ -13,6 +14,8 @@ from django.http import JsonResponse
 
 
 
+=======
+>>>>>>> a76c098a2995ead186bb062d4aafc38a3ef9ce78
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -30,6 +33,7 @@ class PostViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
 
+<<<<<<< HEAD
 
 
 #Lets import our Player APP
@@ -70,3 +74,5 @@ def get_users(request):
     return JsonResponse(post_list, safe=False)
 
 
+=======
+>>>>>>> a76c098a2995ead186bb062d4aafc38a3ef9ce78

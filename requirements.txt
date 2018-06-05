@@ -1,9 +1,16 @@
+<<<<<<< HEAD
 -f /usr/share/pip-wheels
 certifi==2018.1.18
 chardet==3.0.4
+=======
+
+>>>>>>> a76c098a2995ead186bb062d4aafc38a3ef9ce78
 Django==2.0.4
 djangorestframework==3.8.0
 idna==2.6
 pytz==2018.3
+<<<<<<< HEAD
 requests==2.18.4
+=======
+>>>>>>> a76c098a2995ead186bb062d4aafc38a3ef9ce78
 urllib3==1.22

@@ -40,10 +40,14 @@ router.register(r'posts', views.PostViewSet)
 
 
 urlpatterns = [
+<<<<<<< HEAD
     path('home', views.home, name='home'),
     path('users', views.get_users, name='get_users'),
 
     path('api/', include(router.urls)),
+=======
+    path('', include(router.urls)),
+>>>>>>> a76c098a2995ead186bb062d4aafc38a3ef9ce78
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('admin/', admin.site.urls),
     path('', TemplateView.as_view(template_name='blog/index.html')),
